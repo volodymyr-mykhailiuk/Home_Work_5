@@ -31,17 +31,20 @@ print("Reverse number =", reverse_number)
 print()
 
 second = int(input("Input seconds = "))
+seconds_in_minute = 60
+seconds_in_hour = 3600
+seconds_in_day = 86400
 
-if second < 60:
+if second < seconds_in_minute:
     print("0 hours and 0 minutes pass.")
-elif second > 86400:
+elif second > seconds_in_day:
     print("Error!")
-elif second < 3600:
-    minute = second / 60
+elif second < seconds_in_hour:
+    minute = second / seconds_in_minute
     print("0 hours and", int(minute), "minutes pass.")
 else:
-    hour = second / 3600
-    minute = (second - int(hour) * 3600) / 60
+    hour = second / seconds_in_hour
+    minute = (second - int(hour) * seconds_in_hour) / seconds_in_minute
     print(int(hour), "hours and", int(minute), "minutes pass.")
 
 # 5. Написати програму яка визначає чи є натуральне число, що ввів користувач:
